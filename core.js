@@ -1253,7 +1253,7 @@ export class FileTypeParser {
 		) {
 			// They all can have MIME `video/mp4` except `application/mp4` special-case which is hard to detect.
 			// For some cases, we're specific, everything else falls to `video/mp4` with `mp4` extension.
-			const brandMajor = new Token.StringType(4, 'latin1').get(this.buffer, 8).replace('\0', ' ').trim();
+			const brandMajor = new Token.StringType(4, 'latin1').get(this.buffer, 8).toString().replace('\0', ' ').trim();
 			switch (brandMajor) {
 				case 'avif':
 				case 'avis':
